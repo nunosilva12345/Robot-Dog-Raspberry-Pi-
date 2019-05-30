@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ct="http://www.chartistjsf.org/charts"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>FrooFroo Control Interface</title>
+        
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <style>
+            body {
+                background: url('pattern.jpg')repeat;
+            }
+            
+            sensorTable {
+                width: 50%;
+            }
+        </style>
+        
+        <script>
+            
+            $(window).keydown(function(e) {
+                switch (e.keyCode) {
+                    case 113: // q key
+                        remoteLeftForward();
+                        break;
+                    case 119: // w key
+                        e.preventDefault();
+                        remoteForward();
+                        break;
+                    case 101: // e key
+                        remoteRightForward();
+                        break;
+                    case 97: // a key
+                        e.preventDefault();
+                        remoteLeftBackward();
+                    case 115: // s key
+                        e.preventDefault();
+                        remoteReverse();
+                    case 100: // d key
+                        e.preventDefault();
+                        remoteRightBackward();
+                        break;
+                    return;
+                }
+            });
+            
+            $(window).keyup(function() {
+                stop();
+            });
+  
+        </script>
+
+       
+    </h:head>
+    <h:body>
+
+        <h:form>
+            
+            <div class="header" align="center">
+                <div class="text-vertical-center" style="background-color: lavender;">
+                    <br />
+                    <h1>Froo Froo Control Interface</h1>
+                    <h4>Press the buttons to control Froo Froo!</h4>
+                    <br />
+                </div>
+                
+                <br/>
+                <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" >
+                        <h:panelGroup style="display:block; text-align: center">
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 3pt; width: 60pt" type="button" id="leftUpButton" onmousedown="remoteLeftForward()" value="↖"/>
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 2pt; width: 60pt" type="button" id="upButton" onmousedown="remoteForward()" value="🠕" />
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 3pt; width: 60pt" type="button" id="rightUpButton" onmousedown="remoteRightForward()" value="↗"/>
+                        </h:panelGroup>
+                        <h:panelGroup style="display:block; text-align: center;">
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 3pt; width: 60pt" type="button" id="leftDownButton" onmousedown="remoteLeftBackward()" value="↙"/>
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 3pt; width: 60pt" type="button" id="downButton" onmousedown="remoteReverse()" value="🠗"/>
+                            <h:commandButton class="btn btn-success btn-lg" style="margin: 3pt; width: 60pt" type="button" id="rightDownButton" onmousedown="remoteRightBackward()" value="↘"/>
+                        </h:panelGroup>
+
+                    </h:panelGrid>  
+                </h:panelGrid>
+                <br/>
+                
+            </div>
+            
+            <p:remoteCommand name="remoteForward" update="msgs" actionListener="#{FrooFrooControler.setDirectionForward()}" />
+            <p:remoteCommand name="remoteReverse" update="msgs" actionListener="#{FrooFrooControler.setDirectionReverse()}" />
+            <p:remoteCommand name="remoteRightForward" update="msgs" actionListener="#{FrooFrooControler.setDirectionForwardRight()}" />
+            <p:remoteCommand name="remoteLeftForward" update="msgs" actionListener="#{FrooFrooControler.setDirectionForwardLeft()}" />
+            <p:remoteCommand name="remoteRightBackward" update="msgs" actionListener="#{FrooFrooControler.setDirectionBackwardRight()}" />
+            <p:remoteCommand name="remoteLeftBackward" update="msgs" actionListener="#{FrooFrooControler.setDirectionBackwardLeft()}" />
+            <p:growl id="msgs" showDetail="true" />
+
+            
+            <div class="container" style="background-color: lavender; padding: 0px 0px; width: 50%">
+                <p:panel header="Select a Dog" style="margin-bottom:10px;">
+                    <h:selectOneMenu id="DropD" value="#{FrooFrooControler.currentDog}">
+                        <f:selectItems value="#{FrooFrooControler.dogsDisponiveis}" />
+                    </h:selectOneMenu>
+                    <p:poll interval="10" update="DropD"/>
+         
+                </p:panel>
+                <table class="table table-striped table-hover table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Temperature</td>
+                            <td><h:outputText id="Tem" value="#{FrooFrooControler.tempToShow}"/>
+                                 <p:poll interval="1" update="Tem"/>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>Insert value to turn on leds</td>
+                            <td>
+                                <p:inputText id="input1"  value="#{FrooFrooControler.tempDefiner}">
+                                    <f:convertNumber type="number"/>
+                                </p:inputText>
+                                <p:commandButton value="Submit" action="#{FrooFrooControler.setTemperature()}">  
+                                </p:commandButton>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="container" style=" padding: 0px 0px; width: 50%">                   
+                <p>"\n"</p>
+            </div>
+            
+            <div class="container " style="background-color: lavender; padding: 0px 0px; width: 50%">                   
+                <ct:chart id="lineChart" type="line" model="#{chartDataBean.lineModel}">
+                    <p:ajax event="itemSelect" listener="#{chartDataBean.itemSelect}" update="lineChartMessage" />
+                    <p:poll interval="30" update="lineChart"/>
+                </ct:chart>
+                <p:message id="lineChartMessage" for="lineChart" showDetail="true" />
+            </div>
+       
+           
+        </h:form>
+        
+    </h:body>
+    
+</html>
+

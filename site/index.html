@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<title>The Dog Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 65%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+	margin-bottom: 20px;
+}
+
+.column2 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    margin-bottom: 20px;
+    background-color: white;
+}
+.column3 {
+    float: left;
+    width: 93%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bordercol {
+    border: 3px solid black;
+    padding: 25px;
+    margin: 25px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
+    <a href="#home" class="w3-bar-item w3-button"><b>The Dog</b> </a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+
+      <a href="#client" class="w3-bar-item w3-button">Client</a>
+      <a href="#user" class="w3-bar-item w3-button">User Guide</a>
+      <a href="#specif" class="w3-bar-item w3-button">Specification</a>
+      <a href="#developer" class="w3-bar-item w3-button">Developer</a>
+      <a href="weekly.html" class="w3-bar-item w3-button">Team</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="imagens/principal.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white" ><span class="w3-padding w3-black w3-opacity-min"><b>Froo² Project</b></span> <span class="w3-hide-small w3-text-light-grey"></span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!--  Client Section -->
+  <div class="w3-container w3-padding-32" id="client">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Client Area</h2>
+    <h4>Somos alunos de 3ºano de Engenharia Informática da Universidade de Aveiro, desenvolvemos este projecto no âmbito da disciplina de Introdução à Engenharia de Software.</h4>
+    <h4>O Froo² (lido Froo Froo), é um protótipo de cão remotamente controlado que interage com o ambiente que o rodeia consoante os dados recolhidos pelos sensores que possui. Inicialmente foi nos fornecido um protótipo já montado de um cão feito de peças Lego com o respetivo motor e o rotor das rodas. Acrescentamos um sensor de temperatura, dois de proximade (um para a frente do cão outro para trás) de modo a evitar colisão com objetos, um sensor de som, um coluna (que reproduz o som de um cão a ladrar).</h4>
+    <h4>Desenvolvemos um interface onde são apresentados alguns dados e através da qual o Froo² é controlado e criamos também uma base de dados. Tudo isto funciona graças a um sistema de mensagens utilizando um Raspberry Pi como servidor intermediário entre a interface com o utilizador e os diversos atuadores do Froo².</h4> 
+    <h4>O principal problema foi trabalhar com o hardware, uma vez que foi o nosso primeiro contato com o Raspberry Pi e com os diferentes sensores. Perdemos realmente mais tempo do que o esperado, porque tivemos de aprender as coisas mais básicas. Outra das maiores dificuldades foi colocarmos valores na interface.</h4>
+
+
+  
+ </div>
+
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/andreia.jpg" alt="John" style="width:100%">
+      <h3>Andreia Patrocínio</h3>
+      <h6 class="w3-opacity">Team Manager</h6>
+      <h6>Natural de Bragança, a Andreia será responsável pela atribuição de tarefas para garantir um trabaho consistente da equipa.</h6>
+      <h6 class="w3-light-grey w3-block w3-center">patrocinioandreia@ua.pt </h6>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/pedro.jpg" alt="Dan" style="width:100%">
+      <h3>Pedro Pires</h3>
+      <h6 class="w3-opacity">Quality Assurance</h6>
+      <h6>O Pedro é natural do Sabugal,é membro do IEEE será responsável por verificar o progresso do projeto.</h6>
+      <h6 class="w3-light-grey w3-block w3-center">ptpires@ua.pt </h6>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/nuno.jpg" alt="Dan" style="width:100%">
+      <h3>Nuno Silva</h3>
+      <h6 class="w3-opacity">Documentation Manager</h6>
+      <h6>Nasceu no Porto, mas preferiu Aveiro para estudar.O Nuno será responsável pela documentação.</h6>
+      <h6 class="w3-light-grey w3-block w3-center">nuno1@ua.pt </h6>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/artur.jpg" alt="Mike" style="width:100%">
+      <h3>João Artur Costa</h3>
+      <h6 class="w3-opacity">Developer</h6>
+      <h6>Natural de Vila Real, o Artur foi escolhido com developer pelas suas boas capacidades de programação. </h6>
+      <h6 class="w3-light-grey w3-block w3-center">jarturcosta@ua.pt </h6>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/diogo.jpg" alt="Jane" style="width:100%">
+      <h3>Diogo Jorge</h3>
+      <h6 class="w3-opacity">Developer</h6>
+      <h6>Veio de Leiria, é escuteiro, é membro ativo do IEEE, foi nomeado developer pelo seu fascínio pela eletrónica.</h6>
+      <h6 class="w3-light-grey w3-block w3-center">diogo.jorge@ua.pt </h6>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="imagens/froo.jpg" alt="Dan" style="width:100%">
+      <h3>Froo Froo</h3>
+      <h6 class="w3-opacity">Mascote</h6>
+      <h6>O Froo Froo será a nossa cobaia de serviço, mas também o nosso real companheiro nos próximos meses.</h6>
+      <h6 class="w3-light-grey w3-block w3-center"> </h6>
+    </div>
+  </div>
+
+
+
+  <!-- User Section -->
+  <div class="w3-container w3-padding-32" id="user">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">User Guide</h2>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col l7 m7 w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="imagens/ui1.png" style="width:80%">
+      </div>
+    </div>
+    <div class="w3-col l5 m5 w3-margin-bottom">
+      <div class="w3-display-container">
+        <h4>Nós temos uma interface do utilizador, apresentada na figura seguinte. As setas da figura servem para mover o Froo Froo, para além destas as teclas Q, W, E, A, S e D  do teclado do computador também funcionam.</h4>
+        <h4>O utilizador pode controlar o Froo Froo. Para além disto, pode selecionar de entre uma gama de cães (o cão físico e uma série de cães virtuais) e verificar na interface o último valor de temperatura lido para esse cão. É importante salientar que os cães virtuais enviam valores random de temperatura para simular a leitura de um sensor real</h4>
+        <h4></h4>
+    </div>
+   
+
+    </div>
+  </div>
+
+  
+
+  <!--Specification Section -->
+
+  <div class="w3-container w3-padding-32" id="specif">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Specification - Architecture</h2>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-display-container">
+       <h4>Apresentamos na figura seguinte o modelo da nossa arquitetura. O raspberry pi e todos os sensores estão ligados à cloud AMQP. A informação dos sensores é transmitida à base de dados desenvolvida em PostgreSQL. A user interface foi desenvolvida em JSF usando também Prime Faces, e vai ler os valores dos sensores á base de dados.</h4>
+       <br></br>
+      <div class="w3-margin-top w3-center">
+        <img class="w3-image" src="imagens/arquitetura.jpg" alt="Architecture" width="1000" style="border-left:50px" >
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <div class="w3-container w3-padding-32" id="specif">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Specification - Features</h2>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-display-container">
+      <h4>Estão implementadas as seguintes funcionalidades apresentadas nos seguintes diagramas de casos de uso.</h4>
+      <img class="w3-image" src="imagens/caso1.jpg" width="50%">
+      <img class="w3-image" src="imagens/caso2.jpg" width="40%">
+    </div>
+
+     <div class="w3-display-container">
+      <br></br>
+      
+      <h4>A nível de user interface a nossa maior dificuldade foi colocar valores na interface. Através da UI é possível controlar os movimentos do cão, definir os valores a que os leds implementados no cão devem ligar.</h4>
+      <h4>Para além do verdadeiro Froo Froo temos uma classe que permite criar Dogs Virtuais, estes caẽs enviam mensagens que simulam sensores de temperatura e proximidade. Foram bastante uteis uma vez que permitiram testar o nosso projeto sem a ligação do raspeberry pi.</h4>
+      <h4>Na interface existe uma dropdown que é atualizada consoante os cães que estão a enviar mensagens, selecionando um cão é possível ver o último valor de temperatura recebido, esse valor está guardado num hashmap. É ainda possível ver um gráfico com os últimos 10 valores da temperatura retirados da base de dados.</h4>
+      <h4>No hardware está implementado um sensor de temperatura que deteta a temperatura ambiente, se esta for superior à temperatura definida na definida pelo utilizador na interface, os leds ficam ligados. Temos dois sensores de proximidades, um na frente do cão e outro atrás, estes detetam objetos de forma a impedir que o cão choque contra os mesmos. Temos ainda um sensor de som  que deteta um som mais elevado (estalar dos dedos ou bater palmas) e uma coluna que quando o sensor de som é ativado reproduz o barulho de um cão a ladrar.</h4>
+    </div>
+
+    <br></br>
+	  	<video style="width:100%" controls muted>
+	        <source src="imagens/FrooFrooDemo.mp4" type="video/mp4">
+	    </video>
+  </div>
+
+  <div class="w3-container w3-padding-32" id="specif">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Specification - Data Model</h2>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l7 m7 w3-margin-bottom">
+      <div class="w3-display-container">
+        <h4> A nossa base de dados foi desenvolvida em PostegreSQL, uma vez que iríamos trabalhar com uma base de dados relacional esta foi a sugestão do professor.</h4>
+        <h4>Existem duas tabelas, uma para o sensor de proximidade outra para o sensor de temperatura, cada uma delas tem três colunas: id do sensor, valor lido, e a data em que esse mesmo valor foi lido.  Estes dados chegam em mensagens do tipo "IDcão/Sensor/Sensor/Sensor(...)", onde cada Sensor tem os seguintes dados: "tipoSensor, valor, timestamp" e as informações são adicionadas à base de dados. 
+        </h4>
+        <h4>Por uma questão mais prática e tal como já foi dito, os valores apresentados na interface são retirados de um hashmap, e assim sendo a base de dados apenas serve para atualizar o gráfico que mostra os últimos 10 valores de temperatura lidos. </h4>
+         <br></br>
+      </div>
+    </div>
+    <div class="w3-col l5 m5 w3-margin-bottom">
+      <div class="w3-display-container">
+        <img class="w3-image" src="imagens/postgres.png" alt="Architecture" width="35%" style="border-left:50px" >
+
+        <img class="w3-image" src="imagens/datamodel.png" alt="Architecture"  style="border-left:50px" >
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+ 
+
+  
+  <!--Developer Section -->
+  
+   	<div class="w3-container w3-padding-32" id="developer">
+     	<h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Developer</h2>
+   	</div> 
+   	<h3>Montagem de Hardware</h3>
+  
+  	<div class="w3-margin-top w3-center">
+    	<img class="w3-image" src="imagens/sistema.png" width="1000" style="border-left:50px" >
+  	</div>
+
+ 
+
+	<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>Raspberry Pi</h3>
+    		<h6>Sistema usa RaspberryPi 3 Modelo B;</h6>
+			<h6>Instalar sistema operativo no RPI (raspbian ou noobs);</h6>
+			<h6>Transferir para o RPI o diretório "RPI" que se encontra no CodeUA; </h6>
+			<h6>Colocar o ficheiro recieve.py a inicializar no boot do RPI;</h6>
+ 		</div>
+  		<div class="column2 bordercol" >
+   			<img src="imagens/raspberry.png" style="height: 95%">
+  		</div>
+	</div>
+
+	<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>Breadboard / Jumpers / Resistências / Acessórios</h3>
+    		<h6>Usar uma breadboard para fazer as ligações entre os sensores e varias componentes com o RPI;</h6>
+    		<h6>Para realizar as ligações necessárias serão precisos jumpers macho/macho e jumpers macho/femea;</h6>
+    		<h6>Para controlar a intensidade de algumas ligações iremos usar resistências de 220Ω, 330Ω e 1kΩ ;</h6>
+    		<h6>Para alimentar o raspberry pi iremos usar um powerbank;</h6>
+    		<h6>Iremos tambem usar uma coluna que estará ligada na entrada AUX do RPI;</h6>
+ 		</div>
+  		<div class="column2 bordercol">
+   			<img src="imagens/breadboard.png" style="height: 95%" >
+  		</div>
+	</div>
+	<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>Sensor de temperatura</h3>
+    		<h6>Usar sensor de temperatura LM335 juntamente com um conversor de sinal analógico	para digital MCP3208;</h6>
+    		<h6>Fazer todas as ligações necessárias para conectar o conversor ao Raspberry Pi: conectar dois pins a um Pin Ground do RPI, dois pins a um Pin 3.3V do RPI e os restantes quatro pins a quatro diferentes GPIO pins do RPI;</h6>
+    		<h6>Ligar o sensor ao conversor, usando uma resistencia 220Ω para controlar a intensidade que passa para o sensor, não esquecer da ligação ground;</h6>
+    		<h6>Alterar o ficheiro de codigo (temperature.pi) com os GPIO’s e o channel usado no conversor usados na montagem;</h6>
+    		<h6></h6>
+ 		</div>
+  		<div class="column2 bordercol">
+   			<img src="imagens/temperatura.png" style="height: 95%" >
+  		</div>
+	</div>
+	<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>LED's</h3>
+    		<h6>Ligar um GPIO à Breadboard e ligar ambos os Led’s a essa ligação, é possível os dois Leds apenas a um GPIO pois estes requerem pouca corrente, e desta forma apenas requer um comando para controlar os dois Leds;</h6>
+    		<h6>Inserir uma resistencia 330Ω a fazer ligação entre o ground e o sistema;</h6>
+    		<h6>A ativação dos Leds é feita dependente do sensor de temperatura;</h6>
+ 		</div>
+  		<div class="column2 bordercol">
+   			<img src="imagens/leds.png" style="height: 95%" >
+  		</div>
+	</div>
+	<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>Sensor de proximidade</h3>
+    		<h6>Três das ligações a este sensor são feitas sem necessidade de resistencias, uma a um Pin ground à escolha, outra a um Pin de 5V do RPI e outra diretamente a um GPIO à escolha;</h6>
+    		<h6>A quarta ligação necessita de uma explicação mais complexa, esta necessita de ser ligada a uma resistencia de 1kΩ que por sua vez tem duas ligações, uma a um ground do RPI e outra a duas resistencias de 1kΩ em série somando 2kΩ(pois não existem resistencias de 2kΩ) que está ligada ao ground;</h6>
+    		<h6>Alterar o ficheiro de codigo (ultrasonic.pi) com os GPIO’s usados na montagem;</h6>
+
+ 		</div>
+  		<div class="column2 bordercol">
+   			<img src="imagens/proximidade.png" style="height: 95%" >
+  		</div>
+	</div>
+		<div class="row">
+  		<div class="column bordercol" style="background-color:#aaa;">
+    		<h3>Sensor de som</h3>
+    		<h6>Usar sensor de Som SWV2</h6>
+    		<h6>Efectuar as ligações ao sensor, uma ligação 5V, uma ligação a um ground e outra a um GPIO à escolha</h6>
+    		<h6>Alterar o ficheiro de codigo (sound.pi) com os GPIO’s usados na montagem</h6>
+    		<h6>É possível fazer o ajusto dos decibeis necessarios para ativar o sensor, no neste sensor especifico apenas o é possível fazer através do ajuste de um pequeno parafuso </h6>
+ 		</div>
+  		<div class="column2 bordercol">
+   			<img src="imagens/som.png" style="height: 95% wei" >
+  		</div>
+	</div>
+		
+		<div class="row">
+    <h3>Como correr o nosso projeto?</h3>
+  		<div class="column3 bordercol" style="background-color:#aaa; ">
+				<h6></h6>
+				<h6>1. Descarregar o nosso código deste <a href="http://code.ua.pt/projects/ies2017-2018_g202/repository" >link</a>;</h6>
+				<h6>2. Abrir o NetBeans -> File -> Open Project -> Selecionar a pasta Froo2 ;</h6>
+				<h6>3. Caso falta alguma dependência, Froo2 -> Dependencies -> Download Declared Dependencies ;
+				(Considerando que a base de dados está previamente instalada);<b>***</b></h6>
+				<h6>4. Package dog -> Dog.java -> run file (isto corre os cães virtuais que enviam dados virtuais de valores de temperatura e proximidade, verificar no output -> Dog que as mensagens estão a ser enviadas);</h6>
+				<h6>5. Botão do lado direito do Froo2 -> build, botão do lado direito do Froo2 -> run (isto vai abrir no browser a UI, no Output-> GlassFish verificar que as mensagens estão a ser recebidas e a informação está a ser colocada na base de dados).</h6>
+				<h6></h6>
+	    </div>
+  	</div>
+    <div class="row">
+      <div class="column3 bordercol" style="background-color:#aaa; ">
+   
+        <h6><b>***Instalar base de dados:</b></h6>
+        <h6>1. Instalar postgressql no Ubuntu:</h6>
+        <h6>$ sudo apt-get update</h6>
+        <h6>$ sudo apt-get install postgresql postgresql-contrib</h6>
+        <h6>$ sudo -i -u postgres</h6>
+        <h6></h6>
+        <h6>2. Instalar pgAdmin3:</h6>
+        <h6>$ sudo apt-get install pgadmin3</h6>    
+      
+      </div>
+    </div>
+
+
+
+<!-- End page content -->
+</div>
+
+
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
+
